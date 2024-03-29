@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Note(params) {
+function Note(props) {
     return(
-        <div>
+        <div className = "note">
             <h1>
-                {params.title}
+                {props.title}
             </h1>
             <p>
-                {params.content}
+                {props.content}
             </p>
         </div>
     );
