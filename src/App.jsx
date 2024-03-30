@@ -1,31 +1,33 @@
-import './App.css';
-import './styles.css';
-import React, {useState} from 'react';
-import Header from './Header.jsx';
-import Footer from './Footer.jsx';
-import Note from './Note.jsx';
-import notes from './notes.js';
-
-function initNote(info) {
-  return(
-    <Note 
-      key = {info.key}
-      title = {info.title}
-      content = {info.content}
-    />
-  );
-}
-
-
+import React, { useState } from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import Note from './Note';
+import CreateNote from './CreateNote';
 
 function App() {
+  const [notes, setNotes] = useState([]);
+
+  function addNote(newNote) {
+    setNotes(prevNotes => {
+      return [...prevNotes, newNote];
+    });
+  }
+
   return (
     <div className="App">
-      <Header/>
-      {notes.map(initNote)}
-      <button onclick={initNote}>Add Note</button>
-      <Footer/>
-      <Note/>
+      <Header />
+      <CreateNote onAdd={addNote} />
+      {notes.map((noteItem, index) => {
+        return (
+          <Note
+            key={index}
+            id={index}
+            title={noteItem.title}
+            content={noteItem.content}
+          />
+        );
+      })}
+      <Footer />
     </div>
   );
 }
