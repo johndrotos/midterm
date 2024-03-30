@@ -6,7 +6,7 @@ import Footer from './Footer.jsx';
 import Note from './Note.jsx';
 import notes from './notes.js';
 
-function createNote(info) {
+function initNote(info) {
   return(
     <Note 
       key = {info.key}
@@ -16,22 +16,16 @@ function createNote(info) {
   );
 }
 
-function noteInput() {
-  const [note, setNote] = useState({
-    title: '',
-    content: ''
-  });
-  
-}
 
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      {notes.map(createNote)}
-      <button onclick={noteInput}>Add Note</button>
+      {notes.map(initNote)}
+      <button onclick={initNote}>Add Note</button>
       <Footer/>
+      <Note/>
     </div>
   );
 }
