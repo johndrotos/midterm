@@ -1,6 +1,6 @@
 import './App.css';
 import './styles.css';
-import React from 'react';
+import React, {useState} from 'react';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import Note from './Note.jsx';
@@ -16,12 +16,21 @@ function createNote(info) {
   );
 }
 
+function noteInput() {
+  const [note, setNote] = useState({
+    title: '',
+    content: ''
+  });
+  
+}
+
 
 function App() {
   return (
     <div className="App">
       <Header/>
       {notes.map(createNote)}
+      <button onclick={noteInput}>Add Note</button>
       <Footer/>
     </div>
   );
