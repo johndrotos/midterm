@@ -18,7 +18,7 @@ function App() {
 
   function addNote(newNote) {
     setNotes(prevNotes => {
-      return [...prevNotes, { ...newNote, id: prevNotes.length+1}];
+      return [...prevNotes, { ...newNote, id: Date.now()}];
     });
     setInputVisible(false);
   }
