@@ -27,7 +27,6 @@ function InputForm (props){
 
     return(
         <div className = "inputForm">
-            <h1>New Note</h1>
             <form onSubmit={submitNote}>
                 <input
                   name="title"
@@ -39,10 +38,10 @@ function InputForm (props){
                   name="content"
                   value={note.content}
                   onChange={handleChange}
-                  placeholder="Content"
+                  placeholder="Write a note..."
                   rows="5"
                 />
-                <button type="submit">Submit</button>
+                <button type="submit">Add</button>
             </form>
         </div>
     );

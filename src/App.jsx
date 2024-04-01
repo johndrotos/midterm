@@ -10,13 +10,13 @@ import InputForm from './InputForm.jsx';
 function App() {
   
   const [notes, setNotes] = useState(initialNotes);
-  const [inputVisible, setInputVisible] = useState(false);
+  //const [inputVisible, setInputVisible] = useState(false);
 
   function addNote(newNote) {
     setNotes(prevNotes => {
       return [...prevNotes, { ...newNote, key: Date.now()}];
     });
-    setInputVisible(false);
+    //setInputVisible(false);
   }
 
   function deleteNote(key) {
@@ -25,13 +25,18 @@ function App() {
     });
   }
 
+  /*
   function toggleInputVisible() {
     setInputVisible(!inputVisible);
   }
+  */
 
   return (
     <div className="App">
       <Header/>
+      <InputForm onAdd={addNote} />
+
+
       {notes.map((note) => (
         <Note
           key={note.key}
@@ -42,11 +47,14 @@ function App() {
         />
       ))}
 
+
+      {/*
       {inputVisible ? (
         <InputForm onAdd={addNote} />
       ) : (
         <button className="addButton" onClick={toggleInputVisible}>Add Note</button>
       )}
+      */}
 
       <Footer/>
     </div>
