@@ -6,7 +6,7 @@ function Note({id, title, content, onDelete}) {
             <h1>{title}</h1>
             <p>{content}</p>
             <button onClick={() => onDelete(id)}>Delete</button>
-            <p>id: {id}</p>
+            <p>ID: {id}</p>
         </div>
     );
 }
