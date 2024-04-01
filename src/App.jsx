@@ -38,8 +38,8 @@ function App() {
       <Header/>
       {notes.map((note) => (
         <Note
-          key={note.id}
-          id={note.id}
+          key={note.key}
+          id={note.key}
           title={note.title}
           content={note.content}
           onDelete={deleteNote}
