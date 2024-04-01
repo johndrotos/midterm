@@ -7,10 +7,6 @@ import Note from './Note.jsx';
 import initialNotes from './notes.js';
 import InputForm from './InputForm.jsx';
 
-
-
-
-
 function App() {
   
   const [notes, setNotes] = useState(initialNotes);
@@ -18,14 +14,14 @@ function App() {
 
   function addNote(newNote) {
     setNotes(prevNotes => {
-      return [...prevNotes, { ...newNote, id: Date.now()}];
+      return [...prevNotes, { ...newNote, key: Date.now()}];
     });
     setInputVisible(false);
   }
 
-  function deleteNote(id) {
+  function deleteNote(key) {
     setNotes(prevNotes => {
-      return prevNotes.filter(note => note.id !== id);
+      return prevNotes.filter(note => note.key !== key);
     });
   }
 

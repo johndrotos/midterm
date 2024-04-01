@@ -12,7 +12,7 @@
   }
   
   header {
-    background-color: #f5ba13;
+    background-color: #6991b1;
     margin: auto -16px;
     padding: 16px 32px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
@@ -54,11 +54,22 @@
     white-space: pre-wrap;
     word-wrap: break-word;
   }
+  .note button {
+    background-color: white;
+    color: red;
+    border: none;
+    text-align: right;
+    border-radius: 4px;
+    padding: 5px;
+  }
+  .note button:hover{
+    background-color: rgba(255, 0, 0, 0.231)
+  }
 
 
   
   .addButton {
-    background-color: #af704c; 
+    background-color: #2f1ea1; 
     border: none;
     color: white;
     padding: 15px 32px;
@@ -66,14 +77,14 @@
     text-decoration: none;
     float: left;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 16px;
     cursor: pointer;
     border-radius: 8px;
     transition: background-color 0.3s ease;
   }
   
   .addButton:hover {
-    background-color: #a07145;
+    background-color: #130447;
   }
 
 
