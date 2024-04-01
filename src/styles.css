@@ -54,4 +54,61 @@
     white-space: pre-wrap;
     word-wrap: break-word;
   }
+
+
+  
+  .addButton {
+    background-color: #af704c; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    float: left;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .addButton:hover {
+    background-color: #a07145;
+  }
+
+
+
+  .inputForm {
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    width: 240px;
+    margin: 16px;
+    float: left;
+  }
+  
+  .inputForm input[type="text"],
+  .inputForm textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .inputForm button {
+    background-color: #f5ba13; /* Button color similar to header */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  .inputForm button:hover {
+    background-color: #e1a70a; /* Darker shade on hover */
+  }
   

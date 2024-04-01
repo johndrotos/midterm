@@ -1,33 +1,58 @@
-import React, { useState } from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import Note from './Note';
-import CreateNote from './CreateNote';
+import './App.css';
+import './styles.css';
+import React, {useState} from 'react';
+import Header from './Header.jsx';
+import Footer from './Footer.jsx';
+import Note from './Note.jsx';
+import initialNotes from './notes.js';
+import InputForm from './InputForm.jsx';
+
+
+
+
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  
+  const [notes, setNotes] = useState(initialNotes);
+  const [inputVisible, setInputVisible] = useState(false);
 
   function addNote(newNote) {
     setNotes(prevNotes => {
-      return [...prevNotes, newNote];
+      return [...prevNotes, { ...newNote, id: prevNotes.length+1}];
     });
+    setInputVisible(false);
+  }
+
+  function deleteNote(id) {
+    setNotes(prevNotes => {
+      return prevNotes.filter(note => note.id !== id);
+    });
+  }
+
+  function toggleInputVisible() {
+    setInputVisible(!inputVisible);
   }
 
   return (
     <div className="App">
-      <Header />
-      <CreateNote onAdd={addNote} />
-      {notes.map((noteItem, index) => {
-        return (
-          <Note
-            key={index}
-            id={index}
-            title={noteItem.title}
-            content={noteItem.content}
-          />
-        );
-      })}
-      <Footer />
+      <Header/>
+      {notes.map((note) => (
+        <Note
+          key={note.id}
+          id={note.id}
+          title={note.title}
+          content={note.content}
+          onDelete={deleteNote}
+        />
+      ))}
+
+      {inputVisible ? (
+        <InputForm onAdd={addNote} />
+      ) : (
+        <button className="addButton" onClick={toggleInputVisible}>Add Note</button>
+      )}
+
+      <Footer/>
     </div>
   );
 }
